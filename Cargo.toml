@@ -1,0 +1,6 @@
+[package]
+name = "rustrabin"
+version = "0.1.0"
+authors = ["Antonio A Abello <antonio.augusto.abello@gmail.com>"]
+
+[dependencies]
