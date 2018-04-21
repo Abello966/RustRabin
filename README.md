@@ -4,6 +4,19 @@ Implementation of the [Rabin Cryptosystem](https://en.wikipedia.org/wiki/Rabin_c
 
 Works only for 64bit numbers and on the special case the private keys are both 3 mod 4
 
+## Structure
+
+The code is in the src directory
+
+* euclidean.rs - implements extended euclidean algorithm and utilities
+
+* crt.rs - implements Chinese Remainder Theorem
+
+* expmod.rs - implements a safe version for modular exponentiation
+
+* rabin.rs - implements Rabin encryption and decryption 
+
+
 ## Dependencies
 
 * Rust
