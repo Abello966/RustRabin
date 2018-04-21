@@ -38,7 +38,7 @@ fn main() {
     }
     */
     //expmod test
-    /*
+    /* 
     loop {
         println!("Input a, e, n integers for a to the power of e mod n");
         let a = match readnum() {
@@ -54,9 +54,10 @@ fn main() {
             Err(_) => continue,
         };
         println!("({} ** {}) % {} = {}", a, e, n, rustrabin::expmod::expmod(a, e, n));
-    }
-    */
+    }*/
+  
     //crt test 4 mod 7, 3 mod 11 => 25 mod 77
+    /* 
     loop {
         println!("Input a mod q, b mod r for crt test");
         let a = match readnum() {
@@ -80,4 +81,19 @@ fn main() {
             Err(msg) => println!("{}", msg),
         };
     }
+    */
+    
+    //test rabin cryptosystem
+    let q = 1123;
+    let r = 7723;
+    let n = q * r;
+    let x = 4121313;
+    let y = 577647; 
+    let cands = rustrabin::rabin::decrypt(y, q, r);
+    println!("Encrypting {}: {}", x, y);
+    println!("Decrypting. Candidates:");
+    for cand in cands {
+        println!("{}", cand);
+    }
+
 }

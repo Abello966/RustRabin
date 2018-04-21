@@ -10,7 +10,10 @@ pub fn crt2numbers(a: i32, q: i32, b: i32, r:i32) -> Result<i32, String> {
         return Err(String::from("Mods not co-prime"));
     }
 
-    let result = (b * q * q1 + a * r * r1) % (q * r);
+    let resultb = (b * q * q1) % (q * r);
+    let resulta = (a * r * r1) % (q * r);
+    let result = (resulta + resultb) % (q * r);
+    let result = (result + (q * r)) % (q * r);
     Ok(result)
 }
 
