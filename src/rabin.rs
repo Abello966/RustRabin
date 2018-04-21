@@ -3,15 +3,15 @@ use expmod;
 use crt; 
 
 //Produces cyphertext y from public key
-pub fn encrypt(x: i32, n: i32) -> i32 {
+pub fn encrypt(x: i64, n: i64) -> i64 {
     (x * x) % n
 }
 
 //decrypts cyphertext using private keys
 //particular case in which 4 | q + 1, 4 | r + 1
 //finds 4 candidates for plaintext
-pub fn decrypt(y: i32, q: i32, r: i32) -> Vec<i32> {
-    let mut ans: Vec<i32> = Vec::new();
+pub fn decrypt(y: i64, q: i64, r: i64) -> Vec<i64> {
+    let mut ans: Vec<i64> = Vec::new();
 
     let x1 = expmod::expmod(y, (q + 1) / 4, q);
     let x2 = expmod::expmod(y, (r + 1) / 4, r);

@@ -2,17 +2,17 @@
 
 /* calculates the gcd and u, v such that gcd(a, b) = u * a + v * b */
 /* returns u, v, gcd */
-pub fn extended_euclidean(a: i32, b: i32) -> (i32, i32, i32) {
+pub fn extended_euclidean(a: i64, b: i64) -> (i64, i64, i64) {
     /* First iteration: a = 1a + 0b */
-    let mut u_2: i32 = 1;
-    let mut v_2: i32 = 0;
+    let mut u_2: i64 = 1;
+    let mut v_2: i64 = 0;
     
     /* b = 0a + 1b */
-    let mut u_1: i32 = 0;
-    let mut v_1: i32 = 1;
+    let mut u_1: i64 = 0;
+    let mut v_1: i64 = 1;
     
-    let mut x_2: i32 = a;
-    let mut x_1: i32 = b;
+    let mut x_2: i64 = a;
+    let mut x_1: i64 = b;
     let mut x = x_2 % x_1;
     
     while x > 0 {
@@ -38,7 +38,7 @@ pub fn extended_euclidean(a: i32, b: i32) -> (i32, i32, i32) {
 }
 
 /*using the algorithm above we can calculate the inverse mod n */
-pub fn inverse_mod_n(a: i32, n:i32) -> Result<i32, String> {
+pub fn inverse_mod_n(a: i64, n:i64) -> Result<i64, String> {
     let (_, v, mdc) = extended_euclidean(n, a);
     return match mdc {
         1 => Ok(v % n),

@@ -1,7 +1,7 @@
 /* Implements modular exponential and utilities */
 
 //exponentiate m to the power of e mod n efficiently
-pub fn expmod(m: i32, ein: i32, n: i32) -> (i32) {
+pub fn expmod(m: i64, ein: i64, n: i64) -> (i64) {
     let mut base = m;
     let mut temp = 1;
     let mut e = ein;

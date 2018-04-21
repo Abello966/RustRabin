@@ -1,7 +1,7 @@
 extern crate rustrabin;
 use std::io;
 
-fn readnum() -> Result<i32, std::num::ParseIntError> {
+fn readnum() -> Result<i64, std::num::ParseIntError> {
     let mut read = String::new();
     io::stdin().read_line(&mut read)
                .expect("WTF BOOOM");
@@ -88,7 +88,7 @@ fn main() {
     let r = 7723;
     let n = q * r;
     let x = 4121313;
-    let y = 577647; 
+    let y = rustrabin::rabin::encrypt(x, n); 
     let cands = rustrabin::rabin::decrypt(y, q, r);
     println!("Encrypting {}: {}", x, y);
     println!("Decrypting. Candidates:");

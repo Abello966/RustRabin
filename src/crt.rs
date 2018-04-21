@@ -3,7 +3,7 @@ use euclidean;
 
 /* special case in which there are only two numbers */
 /* given N = a mod q and b mod r returns N mod qr  */
-pub fn crt2numbers(a: i32, q: i32, b: i32, r:i32) -> Result<i32, String> {
+pub fn crt2numbers(a: i64, q: i64, b: i64, r:i64) -> Result<i64, String> {
     let (q1, r1, gcd) = euclidean::extended_euclidean(q, r);
     
     if gcd != 1 {
