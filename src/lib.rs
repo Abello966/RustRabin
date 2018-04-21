@@ -1,4 +1,6 @@
+pub mod crt;
 pub mod euclidean;
+pub mod expmod;
 
 #[cfg(test)]
 mod tests {

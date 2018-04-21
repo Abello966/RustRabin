@@ -9,8 +9,10 @@ fn readnum() -> Result<i32, std::num::ParseIntError> {
 }
 
 fn main() {
+    //euclidean tests
+    /*
     loop {
-        println!("Print a > b integers for mdc");
+        println!("Input a > b integers for mdc");
         
         let a = match readnum() {
             Ok(num) => num,
@@ -33,7 +35,49 @@ fn main() {
         else {
             println!("It doesnt work...");
         }
-       
-
+    }
+    */
+    //expmod test
+    /*
+    loop {
+        println!("Input a, e, n integers for a to the power of e mod n");
+        let a = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let e = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let n = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        println!("({} ** {}) % {} = {}", a, e, n, rustrabin::expmod::expmod(a, e, n));
+    }
+    */
+    //crt test 4 mod 7, 3 mod 11 => 25 mod 77
+    loop {
+        println!("Input a mod q, b mod r for crt test");
+        let a = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let q = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let b = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let r = match readnum() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        match rustrabin::crt::crt2numbers(a, q, b, r) {
+            Ok(num) => println!("Ans: {}", num),
+            Err(msg) => println!("{}", msg),
+        };
     }
 }
