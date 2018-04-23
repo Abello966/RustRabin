@@ -16,6 +16,8 @@ The code is in the src directory
 
 * rabin.rs - implements Rabin encryption and decryption 
 
+* main.rs - has an example of using the rabin cryptosystem plus a quick implementation of the ElGamal Signature using the above mentioned libs.
+
 
 ## Dependencies
 

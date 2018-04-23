@@ -44,7 +44,7 @@ pub fn extended_euclidean(a: i64, b: i64, verbose: bool) -> (i64, i64, i64) {
 pub fn inverse_mod_n(a: i64, n:i64, verbose: bool) -> Result<i64, String> {
     let (_, v, mdc) = extended_euclidean(n, a, verbose);
     return match mdc {
-        1 => Ok(v % n),
+        1 => Ok(((v % n) + n ) % n),
         _ => Err(String::from("Arguments were not co-prime")),
     };
 }
